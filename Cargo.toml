@@ -1,0 +1,6 @@
+[package]
+name = "raw-fire"
+version = "0.1.0"
+authors = ["jamcar23 <jamcar23@gmail.com>"]
+
+[dependencies]
