@@ -20,9 +20,12 @@
 extern crate clap;
 
 mod image;
+#[macro_use]
+mod macros;
 
 use clap::{App, Arg};
 use image::{IO, Config};
+
 
 fn main() {
     let matches = App::new("RAW Fire")
@@ -98,6 +101,6 @@ fn main() {
         },
     };
 
-    println!("Config: {:?}", conf);
-
+    log!(2, conf.verbose, "Config: {:?}", conf);
+    log!(1, conf.verbose, "Opening image...");
 }

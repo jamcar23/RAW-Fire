@@ -16,6 +16,9 @@
 * along with RAW Fire.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/// A generic struct to hold data for the input (i) and output (o).
+/// Useful for things like import/export paths, file types, etc.
+
 #[derive(Debug)]
 pub struct IO <T> {
     pub i: T,
@@ -27,6 +30,8 @@ impl <T> IO<T> {
         return IO {i: input, o: output};
     }
 }
+
+/// A struct for holding the args passed in from the command line in a usable manner.
 
 #[derive(Debug)]
 pub struct Config {
