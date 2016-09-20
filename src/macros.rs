@@ -16,10 +16,17 @@
 * along with RAW Fire.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/// Macro for printing, using ```println!``` if $cv is above a certain level.
+/// Macro for printing, using ```println!```, if $verb is above a certain level.
 /// Convenient for printing at different verbose / log levels.
 ///
 /// See [println!](https://doc.rust-lang.org/src/std/up/src/libstd/macros.rs.html#118-121) for more.
+///
+/// # Args
+///
+/// $lvl -- The level needed for this log to be printed.
+/// $verb -- The user defined verbosity.
+/// $s -- The expression normally passed into ```println!```.
+/// $arg -- The args that will be passed into ```println!```.
 ///
 /// # Panics
 /// Panics if writing to `io::stdout()` fails.
@@ -32,7 +39,6 @@
 /// log!(1, conf.verbose, "Level 1: Hello {}", "World");
 /// log!(2, conf.verbose, "Level 2: Hello {}", "World 2");
 /// ```
-///
 
 #[macro_export]
 macro_rules! log {
