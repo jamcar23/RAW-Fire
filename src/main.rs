@@ -45,8 +45,8 @@ fn main() {
             .value_name("FILE")
             .takes_value(true)
             .required(false)
-            .help("The path to export the image to. \nDEFAULT: same input path \
-            with an added '_out' added to image name."))
+            .help("The path to export the image to. \nDEFAULT: same as input path \
+            with '_out' added to image name."))
         .arg(Arg::with_name("OUTPUT TYPE")
             .short("t")
             .long("out_type")
@@ -62,8 +62,8 @@ fn main() {
             .takes_value(true)
             .default_value("1")
             .required(false)
-            .help("How much text such be printed while running: \n0 -- Off\n1 -- On, but only important things\
-            2 -- On, print everything")
+            .help("How much text such be printed while running: \n0 - Off\n1 - On, but only important things\
+            \n2 - On, print everything")
         )
         .arg(Arg::with_name("GUI")
             .short("g")

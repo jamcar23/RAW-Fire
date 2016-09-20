@@ -16,6 +16,10 @@
 * along with RAW Fire.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+extern crate arrayfire as af;
+
+//use af;
+
 /// A generic struct to hold data for the input (i) and output (o).
 /// Useful for things like import/export paths, file types, etc.
 
@@ -39,4 +43,22 @@ pub struct Config {
     pub file_type: IO<String>,
     pub verbose: u8,
     pub gui: bool,
+}
+
+pub struct Image {
+    data: af::Array
+
+}
+
+impl Image {
+    pub fn new_from_path(path: String) -> Image {
+        let a = af::load_image_native(path);
+        Image { data: a }
+    }
+
+    pub fn new_from_path_force_type<T: af::HasAfEnum>(path: String) -> Image {
+        let mut a = af::load_image_native(path);
+        a = a.cast::<T>();
+        Image { data: a}
+    }
 }
