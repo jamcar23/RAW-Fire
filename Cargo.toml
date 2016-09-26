@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["jamcar23 <jamcar23@gmail.com>"]
 
 [dependencies]
-arrayfire = {path = "./arrayfire-rust/", version = "3.4.0"}
+collenchyma = "0.0.8"
 clap = {version = "2", features = ["suggestions", "color", "wrap_help"]}
 
 [[example]]
